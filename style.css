@@ -1,0 +1,120 @@
+/* リセットCSS（基本的なリセット） */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: sans-serif;
+    line-height: 1.6;/*行間 */
+    background: #008080;
+    background-image: url('images/bg-pattern-top.svg'), url('images/bg-pattern-bottom.svg');
+    background-position: top left, bottom right;
+    background-repeat: no-repeat;
+    background-size: 800px 800px, 800px 800px;
+
+    /*親要素に設定し、子要素を完全中央揃えに */
+    display: flex; 
+    justify-content: center;
+    align-items: center;
+    height: 100vh; /* 画面全体の高さに対して中央に配置 */
+
+    flex-direction: column; /*カードとattributionを縦並びに。body内の要素が縦に並ぶ */
+    
+}
+
+.attribution {
+    font-size: 11px;
+    text-align: center;
+    margin-top: auto; /*下に配置。flexboxではautoと付くと残りのスペースを占めるようになる */
+}
+
+.attribution a {
+    color: hsl(228, 45%, 44%);
+}
+
+
+.profile-card_content{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+}
+
+.profile-card{
+    width: 300px;
+    border-radius: 10px;
+    background-color: #ffff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    overflow: hidden;/*要素のボックスからはみ出たコンテンツ（下記のbackground-imageが大きいから）を非表示にする */
+    margin: 0 auto;
+    align-items: center;
+    
+}
+
+.profile-img-container{
+    width: 100%; /*カード上部の背景部分 */
+    height: 150px;
+    background-image: url('images/bg-pattern-card.svg');
+    position: relative;
+
+}
+
+.profile-img-container img{
+    position: absolute;
+    top: 100%;
+    left: 50%;/*背景画像部分の1番下に配置 */
+    transform: translate(-50%, -50%);
+    border-radius: 100%;
+    border: 7px solid white;/*顔写真まわりの縁が見えるように */
+}
+
+.profile-text-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+    margin-top: 40px;
+    height: 80px;
+    
+}
+
+.profile-name{
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.profile-age{
+    font-size: 24px;
+    color: rgb(98, 97, 97);
+}
+
+.profile-area{
+    font-size: 16px;
+    color: rgb(98, 97, 97);
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+
+
+.stats{
+    display: flex;
+    justify-content: space-around;
+}
+
+.stats-group{
+    margin: 20px;
+}
+
+.stats-number{
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.stats-item{
+    font-size: 16px;
+    color: rgb(98, 97, 97);
+}
